@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.min.js"></script>
+</head>
+
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="one" style="width: 100%; height: 400px;"></div>
+
+    <script>
+        var myChart = echarts.init(document.getElementById('one'));
+
+        var option = {
+            title: {
+                text: 'user_behavior'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },
+            legend: {
+                data: ["点击数", "收藏数", "加购物车数", "购买数"]
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [{
+                type: 'category',
+                boundaryGap: false,
+                data: ['0', '1', '2', '3', '4', '5', '6']
+            }],
+            yAxis: [{
+                type: 'value'
+            }],
+            series: [{
+                    name: "点击数",
+                    type: 'bar',
+                    stack: 'Total',
+                    areaStyle: {},
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [
+                        { value: 10 },
+                        { value: 12 },
+                        { value: 15 },
+                        { value: 14 },
+                        { value: 16 },
+                        { value: 18 },
+                        { value: 20 }
+                    ]
+                },
+                {
+                    name: "收藏数",
+                    type: 'bar',
+                    stack: 'Total',
+                    areaStyle: {},
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [
+                        { value: 5 },
+                        { value: 6 },
+                        { value: 8 },
+                        { value: 7 },
+                        { value: 9 },
+                        { value: 10 },
+                        { value: 11 }
+                    ]
+                },
+                {
+                    name: "加购物车数",
+                    type: 'bar',
+                    stack: 'Total',
+                    areaStyle: {},
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [
+                        { value: 7 },
+                        { value: 8 },
+                        { value: 9 },
+                        { value: 6 },
+                        { value: 10 },
+                        { value: 11 },
+                        { value: 12 }
+                    ]
+                },
+                {
+                    name: "购买数",
+                    type: 'bar',
+                    stack: 'Total',
+                    areaStyle: {},
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [
+                        { value: 3 },
+                        { value: 4 },
+                        { value: 5 },
+                        { value: 4 },
+                        { value: 6 },
+                        { value: 7 },
+                        { value: 8 }
+                    ]
+                }
+            ]
+        };
+
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>
