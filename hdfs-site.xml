@@ -1,0 +1,11 @@
+<!-- hiveserver2 指定端口号 -->
+<property>
+ <name>hive.server2.thrift.port</name>
+ <value>10000</value>
+</property>
+ 
+<!-- hiveserver2 主机地址配置(也可以添加主机名 hadoop001)-->
+<property>
+ <name>hive.server2.thrift.bind.host</name>
+ <value>192.xxx.x.xxx</value>  //你自己的地址
+</property>
