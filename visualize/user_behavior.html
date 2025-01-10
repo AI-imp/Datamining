@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.min.js"></script>
+</head>
+
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="one" style="width: 100%; height: 400px;"></div>
+
+    <script>
+        var myChart = echarts.init(document.getElementById('one'));
+
+        var option = {
+            title: {
+                text: 'user_behavior'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },
+            legend: {
+                data: ["点击数", "收藏数", "加购物车数", "购买数"]
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [{
+                type: 'category',
+                boundaryGap: false,
+                data: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23']
+            }],
+            yAxis: [{
+                type: 'value'
+            }],
+            series: [{
+                    name: "点击数",
+                    type: 'line',
+                    stack: 'Total',
+                    areaStyle: {},
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [
+                        { value: 10 },
+                        { value: 20 },
+                        { value: 30 },
+                        { value: 25 },
+                        { value: 35 },
+                        { value: 40 },
+                        { value: 50 },
+                        { value: 45 },
+                        { value: 60 },
+                        { value: 55 },
+                        { value: 65 },
+                        { value: 70 },
+                        { value: 80 },
+                        { value: 75 },
+                        { value: 85 },
+                        { value: 90 },
+                        { value: 95 },
+                        { value: 100 },
+                        { value: 105 },
+                        { value: 110 },
+                        { value: 115 },
+                        { value: 120 },
+                        { value: 125 },
+                        { value: 130 }
+                    ]
+                },
+                {
+                    name: "收藏数",
+                    type: 'line',
+                    stack: 'Total',
+                    areaStyle: {},
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [
+                        { value: 5 },
+                        { value: 10 },
+                        { value: 15 },
+                        { value: 20 },
+                        { value: 25 },
+                        { value: 30 },
+                        { value: 35 },
+                        { value: 40 },
+                        { value: 45 },
+                        { value: 50 },
+                        { value: 55 },
+                        { value: 60 },
+                        { value: 65 },
+                        { value: 70 },
+                        { value: 75 },
+                        { value: 80 },
+                        { value: 85 },
+                        { value: 90 },
+                        { value: 95 },
+                        { value: 100 },
+                        { value: 105 },
+                        { value: 110 },
+                        { value: 115 },
+                        { value: 120 }
+                    ]
+                },
+                {
+                    name: "加购物车数",
+                    type: 'line',
+                    stack: 'Total',
+                    areaStyle: {},
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [
+                        { value: 15 },
+                        { value: 25 },
+                        { value: 35 },
+                        { value: 40 },
+                        { value: 45 },
+                        { value: 50 },
+                        { value: 60 },
+                        { value: 55 },
+                        { value: 65 },
+                        { value: 70 },
+                        { value: 75 },
+                        { value: 80 },
+                        { value: 85 },
+                        { value: 90 },
+                        { value: 95 },
+                        { value: 100 },
+                        { value: 105 },
+                        { value: 110 },
+                        { value: 115 },
+                        { value: 120 },
+                        { value: 125 },
+                        { value: 130 },
+                        { value: 135 },
+                        { value: 140 }
+                    ]
+                },
+                {
+                    name: "购买数",
+                    type: 'line',
+                    stack: 'Total',
+                    areaStyle: {},
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [
+                        { value: 3 },
+                        { value: 5 },
+                        { value: 8 },
+                        { value: 12 },
+                        { value: 15 },
+                        { value: 18 },
+                        { value: 20 },
+                        { value: 22 },
+                        { value: 25 },
+                        { value: 27 },
+                        { value: 30 },
+                        { value: 32 },
+                        { value: 35 },
+                        { value: 38 },
+                        { value: 40 },
+                        { value: 42 },
+                        { value: 45 },
+                        { value: 48 },
+                        { value: 50 },
+                        { value: 52 },
+                        { value: 55 },
+                        { value: 58 },
+                        { value: 60 },
+                        { value: 62 }
+                    ]
+                }
+            ]
+        };
+
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>
